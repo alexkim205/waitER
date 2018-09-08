@@ -1,4 +1,5 @@
 var getdata = require('./getdata')
+require('./triage')
 
 var headers = {
     'Authorization': 'Bearer ' + 'demo',
