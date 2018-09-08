@@ -62,3 +62,6 @@ typings/
 
 # browserify
 public/javascripts/script_bundle.js
+
+# mac stuff
+*.DS_Store
