@@ -9,7 +9,7 @@
     "watch-js": "watchify public/javascripts/script.js -o public/javascripts/script_bundle.js -dv",
     "watch": "npm run watch-css & npm run watch-js",
     "build-js": "browserify public/javascripts/script.js > public/javascripts/script_bundle.js -d",
-    "build-css": "node-sass --include-path sass public/stylesheets/style.sass public/stylesheets/style.css",
+    "build-css": "node-sass --include-path scss public/stylesheets/ -o public/stylesheets/",
     "build": "npm run build-css && npm run build-js"
   },
   "dependencies": {
@@ -20,6 +20,8 @@
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
     "node-sass-middleware": "0.11.0",
+    "parsleyjs": "^2.8.1",
+    "pretty-checkbox": "^3.0.3",
     "pug": "^2.0.0-beta11"
   },
   "devDependencies": {

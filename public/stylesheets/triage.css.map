@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "triage.css",
+	"sources": [
+		"triage.sass"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,eAAe,CAAC;EACZ,MAAM,EAAE,MAAM;EACd,KAAK,EAAE,GAAG;EACV,gBAAgB,EAAE,kBAAe;EACjC,OAAO,EAAE,GAAG,GAAG"
+}

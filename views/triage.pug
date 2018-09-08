@@ -1,0 +1,104 @@
+extends layout
+
+block header
+  link(rel='stylesheet', href='/stylesheets/triage.css')
+
+block content
+  h1= title
+  small: i Methods influenced by #[a( href='https://www.ahrq.gov/sites/default/files/wysiwyg/professionals/systems/hospital/esi/esihandbk.pdf' ) Emergency Severity Index documentation] from the Agency for Healthcare Research and Quality. 
+  p This is where you will make your triage decision. You will be assigning Emergency Severity Indices (ESI) to incoming ER patients by answering questions about their conditions. 
+
+  .questionholder
+    .questioninfo
+      h3 Decision Point A: Is the Patient in a Life Threatening Condition?
+      ul 
+        li Does this patient have a patent airway?
+        li Is the patient breathing?
+        li Does the patient have a pulse?
+        li Is the nurse concerned about the pulse rate, rhythm, and quality?
+        li Was this patient intubated pre-hospital because of concerns about the patient's ability to maintain a patent airway, spontaneously breathe, or maintain oxygen saturation?
+        li Is the nurse concerned about this patient's ability to deliver adequate oxygen to the tissues?
+        li Does the patient require an immediate medication, or other hemodynamic intervention such as volume replacement or blood?
+        li Does the patient meet any of the following criteria: already intubated, apneic, pulseless, severe respiratory distress, SpO2 < 90 percent, acute mental status changes, or unresponsive?
+      
+    .selector
+      .option.yes
+        span yes
+      .option.no
+        span no
+
+  .questionholder
+    .questioninfo
+      h3 Decision Point B: Should the Patient Wait? 
+      ul 
+        li Is this a high-risk situation? 
+        li Is the patient confused, lethargic or disoriented? 
+        li Is the patient in severe pain or distress?
+
+    .selector
+      .option.yes
+        span yes
+      .option.no
+        span no
+
+
+  .questionholder
+    .questioninfo 
+      h3 Decision Point C: Resource Needs
+      ul 
+        li How many different resources do you think this patient is going to consume in order for the physician to reach a disposition decision? (none, one, many)
+
+    .selector
+      .option.no(style={width: '10%'})
+        span none
+      .option.mid(style={width: '10%'})
+        span one
+      .option.yes(style={width: '80%'})
+        span many
+
+  .questionholder
+    .questioninfo 
+      h3 Decision Point D: The Patient's Vital Signs
+      p Check to see if the patient's vitals are within these parameters. 
+      table(id="decisionDtable")
+        tr
+          th Age
+          th Heart Rate
+          th Respiratory Rate
+          th O2 Saturation
+        tr
+          td <3m
+          td >180
+          td >50
+          td >92%
+        tr 
+          td 3m-3y
+          td >160
+          td >40
+          td >92%
+        tr 
+          td 3y-8y
+          td >140
+          td >30
+          td >92%
+        tr 
+          td >8y
+          td >100
+          td >20
+          td >92%
+
+    .selector
+      .option.yes
+        span normal
+      .option.no
+        span ABnormal
+
+  .questionholder
+    .questioninfo 
+      h3 Decision Point E: Does Time to Treatment Influence ESI Triage Categories?
+
+    .selector
+      .option.yes
+        span yes
+      .option.no
+        span no
