@@ -4,20 +4,22 @@ var socks = {};
 
 function setup(io){
     io.on("connection", (sock) => {
-        //let msg = "Hello\n";
-        //sock.emit("request-id");
+        let msg = "Hello\n";
 
         let i = 50;
 
-        /*let id;
+        let id;
 
+        sock.emit("verify-id", id);
         sock.on("generate-id", (idtext) => {
             id = idtext;
             socks[id] = sock;
-            //send more stuff back
+            console.log(`Client ID is ${id}`);
         });
 
-        */
+        sock.on("correct-id", (id) => {
+            socks[id];//do stuff
+        });
 
         function ping(){
             sock.emit("system-message", `Patients remaining: ${i}\n`);
@@ -30,7 +32,7 @@ function setup(io){
         setInterval(ping, 1*1000);
 
         sock.on("system-message", (text) => {
-            console.log(`System message: ${text}`);            
+            console.log(`System message: ${text}`);
         });
     });
 }
