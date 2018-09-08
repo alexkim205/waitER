@@ -31,5 +31,5 @@ def schedule(patient, list):
     print((index, patients), flush=True)
 
 if __name__ == '__main__':
-#    filename = "/Users/Tongyu/hackathon/PennApps/data/ESI.data.csv"                                                                                           
+#    filename = "/Users/Tongyu/hackathon/PennApps/data/ESI.data.csv"                                                                                         
     make_list()

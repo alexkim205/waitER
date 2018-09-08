@@ -24,9 +24,11 @@ def make_list(file="/Users/Tongyu/hackathon/PennApps/data/ESI.data.csv"):
 
 def schedule(patient, list):
     l = patient.split(',')
-    list.append(Patient(l[0][1:-1], l[2][1:-1], l[3][1:-1], random.randint(1,101), l[4]))
+    new = Patient(l[0][1:-1], l[2][1:-1], l[3][1:-1], random.randint(1,101), l[4])
+    list.append(new)
     patients = sorted(list, key=attrgetter('ESI'))
-    print(patients, flush=True)
+    index = patients.index(new)
+    print((index, patients), flush=True)
 
 if __name__ == '__main__':
 #    filename = "/Users/Tongyu/hackathon/PennApps/data/ESI.data.csv"                                                                                           
