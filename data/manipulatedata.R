@@ -1,0 +1,5 @@
+library(data.table)
+d <- fread("AdmissionsCorePopulatedTable.txt", sep="\t", header=TRUE)
+ESI <- sample.int(5, 100, replace=TRUE)
+d <- cbind(d[!duplicated(d$PatientID)], "ESI"=ESI)
+write.csv(d, "ESI.data.csv", row.names = FALSE)
