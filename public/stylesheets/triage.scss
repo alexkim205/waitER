@@ -3,8 +3,8 @@
  .questionholder {
    margin: 2em auto;
    width: 95%;
-   background-color: #34495e;
-   color: white;
+   background-color: white;
+   color: #34495e;
    //  -webkit-box-shadow: 0px 10px 1px -2px rgba(0, 0, 0, 0.72);
    //  -moz-box-shadow: 0px 10px 1px -2px rgba(0, 0, 0, 0.72);
    //  box-shadow: 0px 10px 1px -2px rgba(0, 0, 0, 0.72);
@@ -12,11 +12,25 @@
    border-radius: 5px 5px 5px 5px;
    -moz-border-radius: 5px 5px 5px 5px;
    -webkit-border-radius: 5px 5px 5px 5px;
-   border: 1px solid #7f8c8d;
+   border: 2px solid #7f8c8d;
 
    .questioninfo {
-    padding: 1.5em;
-  }
+     padding: 1.5em;
+     h3 {
+       margin-bottom: 0.5em;
+     }
+
+     ul {
+       list-style: none;
+       padding-left: 2.5em;
+       //  color: #bdc3c7;
+       font-size: 0.9em;
+     }
+
+     table {
+       margin: 0 auto;
+     }
+   }
  }
 
  p {
@@ -25,28 +39,57 @@
 
  .selector {
    display: flex;
-   height: 50px;
+   height: 60px;
+   cursor: pointer;
 
    .option {
      width: 50%;
      text-align: center;
-     line-height: 50px;
+     line-height: 60px;
      font-size: 1.2em;
-
-     &.yes {
-
-       &:hover,
-       &.selected {
-         background-color: #e74c3c;
-       }
-     }
+     -webkit-transition: all 0.2s ease;
+     -moz-transition: all 0.2s ease;
+     -ms-transition: all 0.2s ease;
+     -o-transition: all 0.2s ease;
+     transition: all 0.2s ease;
+     border-top: 2px solid #7f8c8d;
 
      &.no {
+       // background-color: #e74d3c27;
 
        &:hover,
        &.selected {
-         background-color: #2ecc71;
+         color: #e74c3c;
+         font-size: 1.8em;
        }
      }
+
+     &.yes {
+       // background-color: #2ecc7042;
+
+       &:hover,
+       &.selected {
+         color: #2ecc71;
+         font-size: 1.8em;
+       }
+     }
+
+     &.mid {
+       // background-color: #3498db63;
+
+       &:hover,
+       &.selected {
+         color: #3498db;
+         font-size: 1.8em;
+       }
+     }
+   }
+ }
+
+ #decisionDtable {
+   td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
    }
  }

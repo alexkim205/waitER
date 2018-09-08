@@ -10,7 +10,7 @@ block content
 
   .questionholder
     .questioninfo
-      h3 Decision Point A: Is the Patient Dying?
+      h3 Decision Point A: Is the Patient in a Life Threatening Condition?
       ul 
         li Does this patient have a patent airway?
         li Is the patient breathing?
@@ -23,9 +23,9 @@ block content
       
     .selector
       .option.yes
-        span Yes
+        span yes
       .option.no
-        span No
+        span no
 
   .questionholder
     .questioninfo
@@ -35,18 +35,70 @@ block content
         li Is the patient confused, lethargic or disoriented? 
         li Is the patient in severe pain or distress?
 
+    .selector
+      .option.yes
+        span yes
+      .option.no
+        span no
+
 
   .questionholder
     .questioninfo 
       h3 Decision Point C: Resource Needs
       ul 
         li How many different resources do you think this patient is going to consume in order for the physician to reach a disposition decision? (none, one, many)
-  
+
+    .selector
+      .option.no(style={width: '10%'})
+        span none
+      .option.mid(style={width: '10%'})
+        span one
+      .option.yes(style={width: '80%'})
+        span many
+
   .questionholder
     .questioninfo 
       h3 Decision Point D: The Patient's Vital Signs
-  
+      p Check to see if the patient's vitals are within these parameters. 
+      table(id="decisionDtable")
+        tr
+          th Age
+          th Heart Rate
+          th Respiratory Rate
+          th O2 Saturation
+        tr
+          td <3m
+          td >180
+          td >50
+          td >92%
+        tr 
+          td 3m-3y
+          td >160
+          td >40
+          td >92%
+        tr 
+          td 3y-8y
+          td >140
+          td >30
+          td >92%
+        tr 
+          td >8y
+          td >100
+          td >20
+          td >92%
+
+    .selector
+      .option.yes
+        span normal
+      .option.no
+        span ABnormal
+
   .questionholder
     .questioninfo 
       h3 Decision Point E: Does Time to Treatment Influence ESI Triage Categories?
-  
+
+    .selector
+      .option.yes
+        span yes
+      .option.no
+        span no
