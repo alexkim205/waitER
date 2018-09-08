@@ -22,8 +22,6 @@ function getUserData(url, headers, callback) {
           return callback(new Error('Error parsing JSON response from Human API.'));
         }
         // At this point you can use the JSON object to access the results
-        console.log("Latest blood glucose measurement");
-        console.log(parsedResponse.bloodGlucose.value);
         return callback(null, parsedResponse);
       }
     }
