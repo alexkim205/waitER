@@ -61,4 +61,4 @@ typings/
 .next
 
 # browserify
-public/script_bundle.js
+public/javascripts/script_bundle.js
