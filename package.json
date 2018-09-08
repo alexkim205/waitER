@@ -3,10 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-      "start": "node ./bin/www",
-      "devstart": "nodemon ./bin/www"
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "watch-js": "watchify public/javascripts/script.js -o public/javascripts/script_bundle.js -dv",
+    "watch": "npm run watch-css & npm run watch-js",
+    "build-js": "browserify public/javascripts/script.js > public/javascripts/script_bundle.js -d",
+    "build-css": "node-sass --include-path sass public/stylesheets/style.sass public/stylesheets/style.css",
+    "build": "npm run build-css && npm run build-js"
   },
   "dependencies": {
+    "browserify": "^16.2.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
