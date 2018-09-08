@@ -5,11 +5,21 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 
+var socketio = require('socket.io');
+var http = require('http');
+
 var indexRouter = require('./routes/index');
 var triageRouter = require('./routes/triage');
 // var usersRouter = require('./routes/users');
 
+var networking = require('./src/networking.js');
+
 var app = express();
+
+const server = http.createServer(app);
+const io = socketio(server);
+
+networking.setup(io);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -45,6 +55,11 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+const port = process.env.PORT || 8080;
+server.listen(port, () => {
+  console.log('App started on ' + port);
 });
 
 module.exports = app;

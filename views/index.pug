@@ -3,3 +3,6 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  textarea(rows=4, cols=50, id="infobox", autocomplete="off", readonly)
+  br
+  button(onClick="exportedFunctions.requestHelp()") Request Help
