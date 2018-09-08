@@ -6,8 +6,8 @@ io.on("system-message", (text) => {
 
 function chatMessage(text){
     console.log(text);
-    //let infobox = document.querySelector("#infobox")
-    //infobox.value += text;
+    let infobox = document.querySelector("#infobox")
+    infobox.value = text;
 }
 
 console.log("Networking setup");
