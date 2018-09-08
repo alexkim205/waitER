@@ -8,7 +8,7 @@ function setup(io){
 
         let i = 50;
 
-        let id;
+        let id = 666;
 
         sock.emit("verify-id", id);
         sock.on("generate-id", (idtext) => {
