@@ -1,5 +1,5 @@
 var getdata = require('./getdata');
-require('./network.js');
+var network = require('./network.js');
 
 var headers = {
     'Authorization': 'Bearer ' + 'demo',
@@ -12,3 +12,10 @@ getdata.getUserData(url, headers, function (error, data) {
     console.log(data);
 });
 
+function requestHelp(){
+    network.sendData("help-request");
+}
+
+window.exportedFunctions = {
+    "requestHelp": requestHelp
+};
