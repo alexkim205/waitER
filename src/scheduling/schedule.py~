@@ -9,7 +9,7 @@ Interval scheduling for patients weighted on ESI
 Patient = namedtuple('Patient', 'ID start_time end_time ESI')
 
 # stores file in dictionary of named tuples                                                                                                                    
-def make_list(file="/Users/Tongyu/hackathon/PennApps/data/ESI.reserve.csv"):
+def make_list(file="/Users/Tongyu/hackathon/PennApps/data/ESI.inER.csv"):
     list = []
     with open(file) as f:
         content = f.readlines()
@@ -20,7 +20,7 @@ def make_list(file="/Users/Tongyu/hackathon/PennApps/data/ESI.reserve.csv"):
         list.append(Patient(l[0][1:-1], l[2][1:-1], l[3][1:-1], l[4]))
     patients = sorted(list, key=attrgetter('ESI'))
     names = [i.ID for i in patients]
-    print(names, flush=True)
+    print(patients, flush=True)
     return patients
 
 def add(patient, list):

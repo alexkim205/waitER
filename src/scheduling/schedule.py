@@ -15,12 +15,13 @@ def make_list(file="/Users/Tongyu/hackathon/PennApps/data/ESI.inER.csv"):
         content = f.readlines()
         content = [x.strip() for x in content]
     content.pop(0)
+    print(content)
     for line in content:
         l = line.split(',')
         list.append(Patient(l[0][1:-1], l[2][1:-1], l[3][1:-1], l[4]))
     patients = sorted(list, key=attrgetter('ESI'))
     names = [i.ID for i in patients]
-    print(names, flush=True)
+#    print(patients, flush=True)
     return patients
 
 def add(patient, list):
