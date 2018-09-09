@@ -6,12 +6,13 @@ block header
     exportedFunctions.setupTriage();
 
 block content
-  h1= title
+  h1 Triage Center
   h2 Add a Patient to the ER
   small: i Methods influenced by #[a( href='https://www.ahrq.gov/sites/default/files/wysiwyg/professionals/systems/hospital/esi/esihandbk.pdf' ) Emergency Severity Index documentation] from the Agency for Healthcare Research and Quality.
-  br 
-  a(href="./dashboard")  To view and manage the ER queue, please visit the Dashboard page.
-  p This is where you will make your triage decision. You will be assigning Emergency Severity Indices (ESI) to incoming ER patients by answering questions about their conditions. 
+  p 
+  | This is where you will make your triage decision. You will be assigning Emergency Severity Indices (ESI) to incoming ER patients by answering questions about their conditions. To view and manage the ER queue, please visit the 
+  a(href="./dashboard") Dashboard 
+  | page.
 
   .questionholder
     .questioninfo

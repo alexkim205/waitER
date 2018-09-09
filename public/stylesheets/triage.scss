@@ -63,26 +63,23 @@
 
   .questioninfo.submit {
     text-align: center;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    
     #submitbutton {
       padding: 1em;
       cursor: pointer;
-      -webkit-transition: all 0.2s ease;
-      -moz-transition: all 0.2s ease;
-      -ms-transition: all 0.2s ease;
-      -o-transition: all 0.2s ease;
-      transition: all 0.2s ease;
       border-radius: 5px 5px 5px 5px;
       -moz-border-radius: 5px 5px 5px 5px;
       -webkit-border-radius: 5px 5px 5px 5px;
       
-      &:hover {
-        span {
-          transform: scale(1.15);
-        }
-        background-color: #57bcff;
-        color: white;
-        
-      }
+    }
+    &:hover {
+      background-color: #57bcff;
+      color: white;
     }
   }
 }

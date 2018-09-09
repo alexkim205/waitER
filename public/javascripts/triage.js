@@ -95,7 +95,7 @@ $(document).ready(function () {
 io.on("generated-id", (id) =>{
   console.log(`New patient id: ${id}`);
   var submitbutton = document.getElementById("submitbutton");
-  submitbutton.innerHTML = `Submitted; Patient ID: ${id}`;
+  submitbutton.innerHTML = `Submitted - Patient ID: ${id}`;
   var patientlink = document.getElementById("patientlink");
   patientlink.href = `./id/${id}`;
   patientlink.style = "";

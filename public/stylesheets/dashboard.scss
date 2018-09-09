@@ -5,19 +5,27 @@
   white-space: nowrap;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar; }
-  .scroll a {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  a {
+    &:hover {
+      background-color: #777;
+    }
+
     padding: 8px;
-    color: white; }
-    .scroll a:hover {
-      background-color: #777; }
-  .scroll::-webkit-scrollbar {
-    display: none; }
+    color: white;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
 
 .center {
   margin: auto;
   width: 60%;
-  padding: 10px; }
+  padding: 10px;
+}
 
 #myDIV {
   width: 100%;
@@ -25,4 +33,5 @@
   height: 250px;
   text-align: center;
   background-color: lightblue;
-  margin-top: 20px; }
+  margin-top: 20px;
+}
