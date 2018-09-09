@@ -10,7 +10,7 @@ block header
 
     function generate(list) {
       list.forEach(function(id) {
-        var mydiv = document.getElementById("myPatients");
+        var mydiv = $("myPatients>.scroll").get(0);
         var tag = document.createElement('a');
         tag.setAttribute('onclick',"menu(id);");
         tag.innerHTML = id;
@@ -25,31 +25,32 @@ block content
     body
     p#myDIV
       | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    .scroll
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
-      a(onclick='menu("wfwefew");', href='#') Patient1
+    #myPatients
+      .scroll
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
+        a(onclick='menu("wfwefew");', href='#') Patient1
 
     br
     br
