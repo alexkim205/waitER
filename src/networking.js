@@ -1,5 +1,6 @@
 let scheduling = require('./scheduling.js');
 
+var dashboards = [];
 var socks = {};
 var ids = [1337];
 
@@ -56,6 +57,10 @@ function setup(io){
             scheduling.remove(id);
             pushUpdate();
         });
+
+        sock.on("add-dashboard", () => {
+            dashboards.push(sock);
+        });
     });
 }
 
@@ -75,6 +80,10 @@ function pushUpdate(){
         if(socks.hasOwnProperty(key)){
             socks[key].emit("system-message", patientStatus(key));
         }
+    }
+    for(let i = 0; i < dashboards.length; i++){
+        let sock = dashboards[i]
+        sock.emit("patient-list", scheduling.getPatientList());
     }
 }
 

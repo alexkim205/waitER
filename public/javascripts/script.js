@@ -1,7 +1,6 @@
 var network;
 
 function setup(id){
-
     var getdata = require('./getdata')
     //require('./triage')
     network = require('./network.js');
@@ -24,6 +23,10 @@ function setupTriage(){
     require('./triage');
 }
 
+function setupDashboard(){
+    require('./dashboard');
+}
+
 function requestHelp(){
     if(network){
         network.sendData("help-request");
@@ -33,5 +36,6 @@ function requestHelp(){
 window.exportedFunctions = {
     "requestHelp": requestHelp,
     "setup": setup,
-    "setupTriage": setupTriage
+    "setupTriage": setupTriage,
+    "setupDashboard": setupDashboard
 };
