@@ -8,9 +8,9 @@ var sassMiddleware = require('node-sass-middleware');
 var socketio = require('socket.io');
 var http = require('http');
 
-var indexRouter = require('./routes/index');
 var dashboardRouter = require('./routes/dashboard');
 var triageRouter = require('./routes/triage');
+var patientRouter = require('./routes/patient');
 // var usersRouter = require('./routes/users');
 
 var networking = require('./src/networking.js');
@@ -38,7 +38,7 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/id', indexRouter);
+app.use('/id', patientRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/triage', triageRouter);
 // app.use('/users', usersRouter);
