@@ -19,7 +19,8 @@ def make_list(file="/Users/Tongyu/hackathon/PennApps/data/ESI.inER.csv"):
         l = line.split(',')
         list.append(Patient(l[0][1:-1], l[2][1:-1], l[3][1:-1], l[4]))
     patients = sorted(list, key=attrgetter('ESI'))
-    print(patients, flush=True)
+    names = [i.ID for i in patients]
+    print(names, flush=True)
     return patients
 
 def add(patient, list):
@@ -34,13 +35,14 @@ def remove(patient, list):
     l = patient.split(',')
     old = Patient(l[0][1:-1], l[2][1:-1], l[3][1:-1], l[4])
     list.remove(old)
-    print(list, flush=True)
+    print((list, index), flush=True)
 
 if __name__ == '__main__':
 #    filename = "/Users/Tongyu/hackathon/PennApps/data/ESI.data.csv"                                                                                    
      with open("/Users/Tongyu/hackathon/PennApps/data/ESI.reserve.csv") as f:
         content = f.readlines()
         content = [x.strip() for x in content]
-     first = content[1]
-     list = make_list()
-     add(first, list)
+     first = content[0]
+#     list = make_list()
+#     add(first, list)
+     make_list()
