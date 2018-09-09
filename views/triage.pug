@@ -30,7 +30,7 @@ block content
           ul
             li Does the patient meet any of the following criteria: already intubated, apneic, pulseless, severe respiratory distress, SpO2 < 90%, acute mental status changes, or unresponsive?
       
-    .selector
+    .selector.A
       .option.yes
         span yes
       .option.no
@@ -50,7 +50,7 @@ block content
             li Is the patient confused, lethargic or disoriented? 
             li Is the patient in severe pain or distress?
 
-    .selector
+    .selector.B
       .option.yes
         span yes
       .option.no
@@ -86,7 +86,7 @@ block content
                 li.no Simple wound care
                 li.no Crutches, splints, slings
 
-    .selector
+    .selector.C
       .option.no(style={width: '10%'})
         span none
       .option.mid(style={width: '10%'})
@@ -98,7 +98,7 @@ block content
     .questioninfo 
       h3 Decision Point D: The Patient's Vital Signs
       h4 What is the age of the patient?
-      .selector
+      .selector.age
         .option.age.one(style={width: '25%'})
           span less than 3m
         .option.age.two(style={width: '25%'})
@@ -170,7 +170,7 @@ block content
             | Is the 
             span O2 saturation < 92%
             | ?
-
+      
       //- table(id="decisionDtable")
       //-   tr
       //-     th Age
@@ -198,8 +198,26 @@ block content
       //-     td >20
       //-     td >92%
 
-    .selector
-      .option.yes
-        span normal
-      .option.no
-        span abnormal
+    .selectorpanel
+      .selector.D.vitals
+        .option.no
+          span yes
+        .option.yes
+          span no
+      .selector.D.vitals
+        .option.no
+          span yes
+        .option.yes
+          span no
+      .selector.D.vitals
+        .option.no
+          span yes
+        .option.yes
+          span no
+
+  .questionholder
+    .questioninfo.submit
+      #submitbutton
+        span Submit
+      
+    

@@ -35,6 +35,24 @@
           margin: auto; }
     .questionholder .questioninfo table {
       margin: 0 auto; }
+  .questionholder .questioninfo.submit {
+    text-align: center; }
+    .questionholder .questioninfo.submit #submitbutton {
+      padding: 1em;
+      cursor: pointer;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -ms-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+      border-radius: 5px 5px 5px 5px;
+      -moz-border-radius: 5px 5px 5px 5px;
+      -webkit-border-radius: 5px 5px 5px 5px; }
+      .questionholder .questioninfo.submit #submitbutton:hover {
+        background-color: #57bcff;
+        color: white; }
+        .questionholder .questioninfo.submit #submitbutton:hover span {
+          transform: scale(1.15); }
 
 ul.checks {
   display: inline-block;
@@ -59,7 +77,10 @@ p {
 .selector {
   display: flex;
   height: 60px;
-  cursor: pointer; }
+  cursor: pointer;
+  border-top: 2px solid #7f8c8d; }
+  .selector.age {
+    padding-bottom: 1.5em; }
   .selector .option {
     width: 50%;
     text-align: center;
@@ -69,8 +90,7 @@ p {
     -moz-transition: all 0.2s ease;
     -ms-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-    border-top: 2px solid #7f8c8d; }
+    transition: all 0.2s ease; }
     .selector .option.selected {
       font-size: 1.8em; }
     .selector .option.no:hover, .selector .option.no.selected {
@@ -80,9 +100,18 @@ p {
     .selector .option.mid:hover, .selector .option.mid.selected {
       color: #3498db; }
     .selector .option.age {
-      border-top: 0px solid white; }
+      border-top: 0px solid white;
+      margin-bottom: 1em; }
       .selector .option.age:hover, .selector .option.age.selected {
         font-weight: bold; }
+
+.selectorpanel {
+  display: flex;
+  padding: 0 1.5em;
+  border-top: 2px solid #7f8c8d; }
+  .selectorpanel .selector {
+    border-top: 0px solid white;
+    width: 33.33%; }
 
 .panelforvitalspanel {
   display: flex; }

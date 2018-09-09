@@ -60,6 +60,31 @@
       margin: 0 auto;
     }
   }
+
+  .questioninfo.submit {
+    text-align: center;
+    #submitbutton {
+      padding: 1em;
+      cursor: pointer;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -ms-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+      border-radius: 5px 5px 5px 5px;
+      -moz-border-radius: 5px 5px 5px 5px;
+      -webkit-border-radius: 5px 5px 5px 5px;
+      
+      &:hover {
+        span {
+          transform: scale(1.15);
+        }
+        background-color: #57bcff;
+        color: white;
+        
+      }
+    }
+  }
 }
 
 ul.checks {
@@ -96,6 +121,11 @@ p {
   display: flex;
   height: 60px;
   cursor: pointer;
+  border-top: 2px solid #7f8c8d;
+
+  &.age {
+    padding-bottom: 1.5em;
+  }
 
   .option {
     width: 50%;
@@ -107,7 +137,6 @@ p {
     -ms-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
-    border-top: 2px solid #7f8c8d;
 
     &.selected {
       font-size: 1.8em;
@@ -143,12 +172,24 @@ p {
     &.age {
       // background-color: #e74d3c27;
       border-top: 0px solid white;
+      margin-bottom: 1em;
 
       &:hover,
       &.selected {
         font-weight: bold;
       }
     }
+  }
+}
+
+.selectorpanel {
+  display: flex;
+  padding: 0 1.5em;
+  border-top: 2px solid #7f8c8d;
+
+  .selector {
+    border-top: 0px solid white;
+    width: 33.33%;
   }
 }
 
@@ -159,9 +200,11 @@ p {
     display: none;
     width: 100%;
 
+    // margin-bottom: 1em;
     .vitals {
       width: 33.33%;
       text-align: center;
+
       span {
         font-weight: bold;
         font-size: 1.2em;
