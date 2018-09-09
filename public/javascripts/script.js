@@ -1,5 +1,5 @@
 var getdata = require('./getdata')
-require('./triage')
+//require('./triage')
 var network = require('./network.js');
 
 var headers = {
