@@ -4,18 +4,10 @@ extends layout
 block header
   link(rel='stylesheet', href='/stylesheets/dashboard.css')
   script.
+    exportedFunctions.setupDashboard();
+
     function menu(id) {
       document.getElementById("myDIV").innerHTML = id;
-    }
-
-    function generate(list) {
-      list.forEach(function(id) {
-        var mydiv = document.getElementById("myPatients");
-        var tag = document.createElement('a');
-        tag.setAttribute('onclick',"menu(id);");
-        tag.innerHTML = id;
-        mydiv.appendChild(aTag);
-      });
     }
 
 block content

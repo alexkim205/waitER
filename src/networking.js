@@ -59,7 +59,9 @@ function setup(io){
         });
 
         sock.on("add-dashboard", () => {
+            console.log("Added dashboard");
             dashboards.push(sock);
+            sock.emit("patient-list", scheduling.getPatientList());
         });
     });
 }
