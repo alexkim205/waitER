@@ -7,7 +7,9 @@ block header
 
 block content
   h1= title
-  small: i Methods influenced by #[a( href='https://www.ahrq.gov/sites/default/files/wysiwyg/professionals/systems/hospital/esi/esihandbk.pdf' ) Emergency Severity Index documentation] from the Agency for Healthcare Research and Quality. 
+  small: i Methods influenced by #[a( href='https://www.ahrq.gov/sites/default/files/wysiwyg/professionals/systems/hospital/esi/esihandbk.pdf' ) Emergency Severity Index documentation] from the Agency for Healthcare Research and Quality.
+  br 
+  a(href="./dashboard")  To view and manage the ER queue, please visit the Dashboard page.
   p This is where you will make your triage decision. You will be assigning Emergency Severity Indices (ESI) to incoming ER patients by answering questions about their conditions. 
 
   .questionholder
@@ -221,5 +223,8 @@ block content
     .questioninfo.submit
       #submitbutton
         span(id="submitbutton") Submit
+      a(id="patientlink", style="display: none;", target="_blank") Click here to visit the patient's page
+      br(id="submitbreak", style="display: none;")
+      a(href="./dashboard", id="dashboardlink", style="display: none;", target="_blank") Click here to visit the dashboard
       
     

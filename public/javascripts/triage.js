@@ -96,4 +96,11 @@ io.on("generated-id", (id) =>{
   console.log(`New patient id: ${id}`);
   var submitbutton = document.getElementById("submitbutton");
   submitbutton.innerHTML = `Submitted; Patient ID: ${id}`;
+  var patientlink = document.getElementById("patientlink");
+  patientlink.href = `./id/${id}`;
+  patientlink.style = "";
+  var submitbreak = document.getElementById("submitbreak");
+  submitbreak.style = "";
+  var dashboardlink = document.getElementById("dashboardlink");
+  dashboardlink.style = "";
 });
