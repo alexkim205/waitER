@@ -23,8 +23,7 @@ def make_list(file="/Users/Tongyu/hackathon/PennApps/data/ESI.inER.csv"):
 #    print(patients, flush=True)
     return patients
 
-def update(patient):
-    list = make_list()
+def add(patient, list):
     l = patient.split(',')
     new = Patient(l[0][1:-1], l[2][1:-1], l[3][1:-1], random.randint(1,101), l[4])
     list.append(new)
@@ -32,10 +31,13 @@ def update(patient):
     index = patients.index(new)
     print((index, patients), flush=True)
 
+def remove(patient, list):
+    
+
 if __name__ == '__main__':
 #    filename = "/Users/Tongyu/hackathon/PennApps/data/ESI.data.csv"                                                                                    
      with open("/Users/Tongyu/hackathon/PennApps/data/ESI.reserve.csv") as f:
         content = f.readlines()
         content = [x.strip() for x in content]
      first = content[1]
-     update(first)
+     add(first)
