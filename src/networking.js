@@ -4,7 +4,6 @@ var ids = [1337];
 
 function setup(io){
     io.on("connection", (sock) => {
-        let msg = "Hello\n";
 
         let id;
 
