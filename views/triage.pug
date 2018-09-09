@@ -60,12 +60,31 @@ block content
     .questioninfo 
       h3 Decision Point C: Resource Needs
       .divofpanels
-        .panel(style={width: '50%'})
+        .panel(style={width: '33.33%'})
           img(src="svg/blocks-toy-svgrepo-com.svg")
           ul
             li How many different resources do you think this patient is going to consume in order for the physician to reach a disposition decision?
-        .panel(style={width: '50%'})
-          
+        .panel.resources(style={width: '66.66%'})
+          h4 What are Resources?
+          .subpanel(style={'display': 'flex'})
+            .subsubpanel(style={width: '50%'})
+              ul.checks
+                li.yes Labs (blood, urine)
+                li.yes ECG, X-rays CT-MRI-ultrasound angiography
+                li.yes IV fluids (hydration)
+                li.yes IV, IM or nebulized medications
+                li.yes Specialty consultation
+                li.yes Simple procedure (lac repair, Foley cath)
+                li.yes Complex procedure (conscious sedation)
+            .subsubpanel(style={width: '50%'})
+              ul.checks
+                li.no History & physical
+                li.no Point-of-care testing
+                li.no Saline or heplock
+                li.no PO medications, Tetanus immunization, Prescription refills
+                li.no Phone call to PCP
+                li.no Simple wound care
+                li.no Crutches, splints, slings
 
     .selector
       .option.no(style={width: '10%'})
@@ -78,46 +97,109 @@ block content
   .questionholder
     .questioninfo 
       h3 Decision Point D: The Patient's Vital Signs
-      p Check to see if the patient's vitals are within these parameters. 
-      table(id="decisionDtable")
-        tr
-          th Age
-          th Heart Rate
-          th Respiratory Rate
-          th O2 Saturation
-        tr
-          td <3m
-          td >180
-          td >50
-          td >92%
-        tr 
-          td 3m-3y
-          td >160
-          td >40
-          td >92%
-        tr 
-          td 3y-8y
-          td >140
-          td >30
-          td >92%
-        tr 
-          td >8y
-          td >100
-          td >20
-          td >92%
+      h4 What is the age of the patient?
+      .selector
+        .option.age.one(style={width: '25%'})
+          span less than 3m
+        .option.age.two(style={width: '25%'})
+          span 3m to 3y
+        .option.age.three(style={width: '25%'})
+          span 3y to 8y
+        .option.age.four(style={width: '25%'})
+          span greater than 8y
+      h4 Are the patient's vitals in these danger zones?
+
+      .divofpanels
+        .panel(style={width: '33.33%'})
+          img(src="svg/cardiogram-heart-svgrepo-com.svg")
+        .panel(style={width: '33.33%'})
+          img(src="svg/tree-svgrepo-com.svg")
+        .panel(style={width: '33.33%'})
+          img(src="svg/hot-air-balloon-svgrepo-com.svg")
+
+      .panelforvitalspanel
+        .vitalspanel.one
+          .vitals.hr
+            | Is the 
+            span heart rate > 180 
+            | beats/min?
+          .vitals.rr
+            | Is the 
+            span respiratory rate > 50 
+            | breaths/min?
+          .vitals.o2
+            | Is the 
+            span O2 saturation < 92%
+            | ?
+        .vitalspanel.two
+          .vitals.hr
+            | Is the 
+            span heart rate > 160 
+            | beats/min?
+          .vitals.rr
+            | Is the 
+            span respiratory rate > 40 
+            | breaths/min?
+          .vitals.o2
+            | Is the 
+            span O2 saturation < 92%
+            | ?
+        .vitalspanel.three
+          .vitals.hr
+            | Is the 
+            span heart rate > 140 
+            | beats/min?
+          .vitals.rr
+            | Is the 
+            span respiratory rate > 30 
+            | breaths/min?
+          .vitals.o2
+            | Is the 
+            span O2 saturation < 92%
+            | ?
+        .vitalspanel.four
+          .vitals.hr
+            | Is the 
+            span heart rate > 100 
+            | beats/min?
+          .vitals.rr
+            | Is the 
+            span respiratory rate > 20 
+            | breaths/min?
+          .vitals.o2
+            | Is the 
+            span O2 saturation < 92%
+            | ?
+
+      //- table(id="decisionDtable")
+      //-   tr
+      //-     th Age
+      //-     th Heart Rate
+      //-     th Respiratory Rate
+      //-     th O2 Saturation
+      //-   tr
+      //-     td <3m
+      //-     td >180
+      //-     td >50
+      //-     td >92%
+      //-   tr 
+      //-     td 3m-3y
+      //-     td >160
+      //-     td >40
+      //-     td >92%
+      //-   tr 
+      //-     td 3y-8y
+      //-     td >140
+      //-     td >30
+      //-     td >92%
+      //-   tr 
+      //-     td >8y
+      //-     td >100
+      //-     td >20
+      //-     td >92%
 
     .selector
       .option.yes
         span normal
       .option.no
         span abnormal
-
-  .questionholder
-    .questioninfo 
-      h3 Decision Point E: Does Time to Treatment Influence ESI Triage Categories?
-
-    .selector
-      .option.yes
-        span yes
-      .option.no
-        span no

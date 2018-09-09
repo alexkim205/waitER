@@ -16,6 +16,8 @@
       display: flex; }
       .questionholder .questioninfo .divofpanels .panel {
         width: 33.33%; }
+        .questionholder .questioninfo .divofpanels .panel.resources {
+          text-align: center; }
         .questionholder .questioninfo .divofpanels .panel img {
           padding: 2em;
           width: 200px;
@@ -33,6 +35,23 @@
           margin: auto; }
     .questionholder .questioninfo table {
       margin: 0 auto; }
+
+ul.checks {
+  display: inline-block;
+  list-style: none; }
+  ul.checks li:before {
+    content: '';
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    background-image: url(http://placehold.it/32?text=fallback);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 0.5em; }
+  ul.checks li.yes:before {
+    background-image: url(../svg/checked-check-svgrepo-com.svg); }
+  ul.checks li.no:before {
+    background-image: url(../svg/minus-svgrepo-com.svg); }
 
 p {
   margin-top: 1em; }
@@ -52,15 +71,30 @@ p {
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
     border-top: 2px solid #7f8c8d; }
+    .selector .option.selected {
+      font-size: 1.8em; }
     .selector .option.no:hover, .selector .option.no.selected {
-      color: #e74c3c;
-      font-size: 1.8em; }
+      color: #e74c3c; }
     .selector .option.yes:hover, .selector .option.yes.selected {
-      color: #2ecc71;
-      font-size: 1.8em; }
+      color: #2ecc71; }
     .selector .option.mid:hover, .selector .option.mid.selected {
-      color: #3498db;
-      font-size: 1.8em; }
+      color: #3498db; }
+    .selector .option.age {
+      border-top: 0px solid white; }
+      .selector .option.age:hover, .selector .option.age.selected {
+        font-weight: bold; }
+
+.panelforvitalspanel {
+  display: flex; }
+  .panelforvitalspanel .vitalspanel {
+    display: none;
+    width: 100%; }
+    .panelforvitalspanel .vitalspanel .vitals {
+      width: 33.33%;
+      text-align: center; }
+      .panelforvitalspanel .vitalspanel .vitals span {
+        font-weight: bold;
+        font-size: 1.2em; }
 
 #decisionDtable td,
 #decisionDtable th {

@@ -10,5 +10,19 @@ $(document).ready(function() {
         options.removeClass('selected')
         $(this).addClass('selected')
     })
+
+    $('.option.age')
+    .click(function() {
+        let ageChosen = $(this).index()
+        let vitalspanels = $('.panelforvitalspanel').children()
+        vitalspanels.each(function(index) {
+            $(this).css({
+                'display': 'none',
+            })
+        });
+        vitalspanels.eq(ageChosen).css({
+            'display': 'flex',
+        })
+    })
 });
 
