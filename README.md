@@ -10,3 +10,12 @@ One of the biggest causes of crowding and wait times in emergency departments is
 
 *Note*: When any update occurs, all pages are updated to reflect the latest changes. 
 
+---
+### Running this program
+
+1. Make sure node and npm are installed on the system.
+2. Install all node modules with `npm install`.
+3. Build the application with `npm run build`.
+4. Run the application with `npm run start`.
+5. Access the triage page at `localhost:8080/triage` and add a patient to the queue.
+6. After adding the patient to the queue, the page will display a link to the patient's individual page along with a link to the dashboard.
