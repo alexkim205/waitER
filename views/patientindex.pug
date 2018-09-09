@@ -16,6 +16,10 @@ head
   link(rel='stylesheet' href='css/flaticon.css')
   link(rel='stylesheet' href='css/icomoon.css')
   link(rel='stylesheet' href='css/style.css')
+  script(src='/socket.io/socket.io.js')
+  script(src='/javascripts/script_bundle.js')
+  script.
+    exportedFunctions.setup(#{id})
 nav#ftco-navbar.navbar.navbar-expand-lg.navbar-dark.ftco_navbar.bg-dark.ftco-navbar-light
   .container
     a.navbar-brand(href='index.html')
@@ -36,7 +40,7 @@ nav#ftco-navbar.navbar.navbar-expand-lg.navbar-dark.ftco_navbar.bg-dark.ftco-nav
     .row.no-gutters.slider-text.align-items-center.justify-content-center(data-scrollax-parent='true')
       .col-md-8.ftco-animate.text-center
         //img(src="images/circle.png")
-        h1.mb-4 003
+        h1.mb-4(id="infobox") 101
         p
           | Above is your approximate queue position. Your time is most important to us. Keep scrolling to find out more about approximate wait times for your condition.
 section.ftco-services

@@ -12,7 +12,7 @@ function setup(io){
             let i = 50;
 
             function ping(){
-                sock.emit("system-message", `Patients remaining: ${i}\n`);
+                sock.emit("system-message", `${i}`);
                 if(i > 0){
                     i--;
                 }
