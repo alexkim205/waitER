@@ -13,12 +13,15 @@ io.on("patient-list", (patientList) => {
 });
 
 
+
+
 function generate(list) {
+    var mydiv = $("#myPatients>div.scroll");
+    mydiv.children().remove();
     list.forEach(function(id) {
-      var mydiv = document.getElementById("myPatients");
       var tag = document.createElement('a');
       tag.setAttribute('onclick',"menu(id);");
       tag.innerHTML = id;
-      mydiv.appendChild(aTag);
+      mydiv.get(0).appendChild(tag);
     });
 }
