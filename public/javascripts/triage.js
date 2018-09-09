@@ -1,3 +1,5 @@
+var io = require('socket.io-client')();
+
 // require('parsleyjs')
 // require('pretty-checkbox')
 console.log('Triage.js loaded')
@@ -83,6 +85,13 @@ $(document).ready(function () {
   $('#submitbutton').click(function(){
     var newPatientEMI = getESI();
     console.log(newPatientEMI);
+    io.emit("add-patient", {
+      esi: newPatientEMI
+    });
   })
 
+});
+
+io.on("generated-id", (id) =>{
+  console.log(`New patient id: ${id}`);
 });

@@ -2,7 +2,8 @@ extends layout
 
 block header
   link(rel='stylesheet', href='/stylesheets/triage.css')
-  script(src='javascripts/triage.js')
+  script.
+    exportedFunctions.setupTriage();
 
 block content
   h1= title
