@@ -10,6 +10,7 @@ var http = require('http');
 
 var indexRouter = require('./routes/index');
 var dashboardRouter = require('./routes/dashboard');
+var triageRouter = require('./routes/triage');
 // var usersRouter = require('./routes/users');
 
 var networking = require('./src/networking.js');
@@ -39,6 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/id', indexRouter);
 app.use('/dashboard', dashboardRouter);
+app.use('/triage', triageRouter);
 // app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

@@ -1,0 +1,223 @@
+extends layout
+
+block header
+  link(rel='stylesheet', href='/stylesheets/triage.css')
+
+block content
+  h1= title
+  small: i Methods influenced by #[a( href='https://www.ahrq.gov/sites/default/files/wysiwyg/professionals/systems/hospital/esi/esihandbk.pdf' ) Emergency Severity Index documentation] from the Agency for Healthcare Research and Quality. 
+  p This is where you will make your triage decision. You will be assigning Emergency Severity Indices (ESI) to incoming ER patients by answering questions about their conditions. 
+
+  .questionholder
+    .questioninfo
+      h3 Decision Point A: Is the Patient in a Life Threatening Condition?
+      .divofpanels
+        .panel
+          img(src="svg/wind-svgrepo-com.svg")
+          ul
+            li Does this patient have a patent airway? 
+            li Is the patient breathing? 
+            li Was this patient intubated pre-hospital because of concerns about the patient's ability to maintain a patent airway, spontaneously breathe, or maintain oxygen saturation?
+        .panel
+          img(src="svg/blood-drop-svgrepo-com.svg")
+          ul
+            li Does the patient have a pulse?
+            li Are you concerned about the pulse rate, rhythm, and quality?
+            li Are you concerned about this patient's ability to deliver adequate oxygen to the tissues?
+            li Does the patient require an immediate medication, or other hemodynamic intervention such as volume replacement or blood?
+        .panel
+          img(src="svg/medical-history-svgrepo-com.svg")
+          ul
+            li Does the patient meet any of the following criteria: already intubated, apneic, pulseless, severe respiratory distress, SpO2 < 90%, acute mental status changes, or unresponsive?
+      
+    .selector.A
+      .option.yes
+        span yes
+      .option.no
+        span no
+
+  .questionholder
+    .questioninfo
+      h3 Decision Point B: Should the Patient Wait? 
+      .divofpanels
+        .panel(style={width: '50%'})
+          img(src="svg/timer-svgrepo-com.svg")
+          ul
+            li Is this a high-risk situation? 
+        .panel(style={width: '50%'})
+          img(src="svg/caution-risk-svgrepo-com.svg")
+          ul
+            li Is the patient confused, lethargic or disoriented? 
+            li Is the patient in severe pain or distress?
+
+    .selector.B
+      .option.yes
+        span yes
+      .option.no
+        span no
+
+  .questionholder
+    .questioninfo 
+      h3 Decision Point C: Resource Needs
+      .divofpanels
+        .panel(style={width: '33.33%'})
+          img(src="svg/blocks-toy-svgrepo-com.svg")
+          ul
+            li How many different resources do you think this patient is going to consume in order for the physician to reach a disposition decision?
+        .panel.resources(style={width: '66.66%'})
+          h4 What are Resources?
+          .subpanel(style={'display': 'flex'})
+            .subsubpanel(style={width: '50%'})
+              ul.checks
+                li.yes Labs (blood, urine)
+                li.yes ECG, X-rays CT-MRI-ultrasound angiography
+                li.yes IV fluids (hydration)
+                li.yes IV, IM or nebulized medications
+                li.yes Specialty consultation
+                li.yes Simple procedure (lac repair, Foley cath)
+                li.yes Complex procedure (conscious sedation)
+            .subsubpanel(style={width: '50%'})
+              ul.checks
+                li.no History & physical
+                li.no Point-of-care testing
+                li.no Saline or heplock
+                li.no PO medications, Tetanus immunization, Prescription refills
+                li.no Phone call to PCP
+                li.no Simple wound care
+                li.no Crutches, splints, slings
+
+    .selector.C
+      .option.no(style={width: '10%'})
+        span none
+      .option.mid(style={width: '10%'})
+        span one
+      .option.yes(style={width: '80%'})
+        span many
+
+  .questionholder
+    .questioninfo 
+      h3 Decision Point D: The Patient's Vital Signs
+      h4 What is the age of the patient?
+      .selector.age
+        .option.age.one(style={width: '25%'})
+          span less than 3m
+        .option.age.two(style={width: '25%'})
+          span 3m to 3y
+        .option.age.three(style={width: '25%'})
+          span 3y to 8y
+        .option.age.four(style={width: '25%'})
+          span greater than 8y
+      h4 Are the patient's vitals in these danger zones?
+
+      .divofpanels
+        .panel(style={width: '33.33%'})
+          img(src="svg/cardiogram-heart-svgrepo-com.svg")
+        .panel(style={width: '33.33%'})
+          img(src="svg/tree-svgrepo-com.svg")
+        .panel(style={width: '33.33%'})
+          img(src="svg/hot-air-balloon-svgrepo-com.svg")
+
+      .panelforvitalspanel
+        .vitalspanel.one
+          .vitals.hr
+            | Is the 
+            span heart rate > 180 
+            | beats/min?
+          .vitals.rr
+            | Is the 
+            span respiratory rate > 50 
+            | breaths/min?
+          .vitals.o2
+            | Is the 
+            span O2 saturation < 92%
+            | ?
+        .vitalspanel.two
+          .vitals.hr
+            | Is the 
+            span heart rate > 160 
+            | beats/min?
+          .vitals.rr
+            | Is the 
+            span respiratory rate > 40 
+            | breaths/min?
+          .vitals.o2
+            | Is the 
+            span O2 saturation < 92%
+            | ?
+        .vitalspanel.three
+          .vitals.hr
+            | Is the 
+            span heart rate > 140 
+            | beats/min?
+          .vitals.rr
+            | Is the 
+            span respiratory rate > 30 
+            | breaths/min?
+          .vitals.o2
+            | Is the 
+            span O2 saturation < 92%
+            | ?
+        .vitalspanel.four
+          .vitals.hr
+            | Is the 
+            span heart rate > 100 
+            | beats/min?
+          .vitals.rr
+            | Is the 
+            span respiratory rate > 20 
+            | breaths/min?
+          .vitals.o2
+            | Is the 
+            span O2 saturation < 92%
+            | ?
+      
+      //- table(id="decisionDtable")
+      //-   tr
+      //-     th Age
+      //-     th Heart Rate
+      //-     th Respiratory Rate
+      //-     th O2 Saturation
+      //-   tr
+      //-     td <3m
+      //-     td >180
+      //-     td >50
+      //-     td >92%
+      //-   tr 
+      //-     td 3m-3y
+      //-     td >160
+      //-     td >40
+      //-     td >92%
+      //-   tr 
+      //-     td 3y-8y
+      //-     td >140
+      //-     td >30
+      //-     td >92%
+      //-   tr 
+      //-     td >8y
+      //-     td >100
+      //-     td >20
+      //-     td >92%
+
+    .selectorpanel
+      .selector.D.vitals
+        .option.no
+          span yes
+        .option.yes
+          span no
+      .selector.D.vitals
+        .option.no
+          span yes
+        .option.yes
+          span no
+      .selector.D.vitals
+        .option.no
+          span yes
+        .option.yes
+          span no
+
+  .questionholder
+    .questioninfo.submit
+      #submitbutton
+        span Submit
+      
+    
