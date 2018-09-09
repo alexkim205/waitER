@@ -1,5 +1,29 @@
+
 extends layout
+
+block header
+  link(rel='stylesheet', href='/stylesheets/dashboard.css')
+  script.
+    exportedFunctions.setupDashboard();
+
+    function menu(id) {
+      document.getElementById("myDIV").innerHTML = id;
+      exportedFunctions.setMenuId(id);
+    }
 
 block content
     h1= title
-    p Welcome to the #{title} Dashboard
+    //p Welcome to the #{title} Dashboard
+    a(href="./triage") To add a new patient to the ER queue, please visit the Triage page.
+
+    body
+    p#myDIV
+      | Go to the Triage to add patients to the queue to display on the dashboard.
+    #myPatients
+      .scroll
+
+    br
+    br
+    .center
+      // input(type='text', name='id')
+      p

@@ -1,4 +1,6 @@
+let scheduling = require('./scheduling.js');
 
+var dashboards = [];
 var socks = {};
 var ids = [1337];
 
@@ -9,7 +11,7 @@ function setup(io){
 
         function serveClient(){
 
-            let i = 50;
+            /*let i = 50;
 
             function ping(){
                 sock.emit("system-message", `${i}`);
@@ -19,7 +21,7 @@ function setup(io){
             };
 
             //1 second interval repeat forever
-            setInterval(ping, 100);
+            setInterval(ping, 100);*/
 
             sock.on("system-message", (text) => {
                 console.log(`System message: ${text}`);
@@ -32,6 +34,7 @@ function setup(io){
                 socks[id] = sock;
                 console.log(`Client ID is ${id}`);
                 sock.emit("id-valid", {});
+                sock.emit("system-message", patientStatus(id));
                 serveClient();
             }
             else{
@@ -39,7 +42,32 @@ function setup(io){
                 sock.emit("id-invalid", `ID ${idtext} does not exist in the database`);
             }
         });
+
+        sock.on("add-patient", (patientInfo) => {
+            let esi = patientInfo.esi;
+            let startTime = new Date().toISOString();
+            let id = generateId();
+            ids.push(id);
+            scheduling.add(scheduling.from(id, startTime, esi));
+            pushUpdate();
+            sock.emit("generated-id", id);
+        });
+
+        sock.on("remove-patient", (id) => {
+            scheduling.remove(id);
+            pushUpdate();
+        });
+
+        sock.on("add-dashboard", () => {
+            console.log("Added dashboard");
+            dashboards.push(sock);
+            sock.emit("patient-list", scheduling.getPatientList());
+        });
     });
+}
+
+function generateId(){
+    return Math.floor(Math.random() * 1000000) + 1;
 }
 
 function isValidId(idtext){
@@ -47,6 +75,22 @@ function isValidId(idtext){
         return true;
     }
     return false;
+}
+
+function pushUpdate(){
+    for(let key in socks){
+        if(socks.hasOwnProperty(key)){
+            socks[key].emit("system-message", patientStatus(key));
+        }
+    }
+    for(let i = 0; i < dashboards.length; i++){
+        let sock = dashboards[i]
+        sock.emit("patient-list", scheduling.getPatientList());
+    }
+}
+
+function patientStatus(id){
+    return scheduling.position(id) + 1;
 }
 
 module.exports.setup = setup;
