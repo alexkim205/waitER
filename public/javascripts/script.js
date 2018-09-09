@@ -16,6 +16,11 @@ function requestHelp(){
     network.sendData("help-request");
 }
 
+function setup(id){
+    network.setup(id);
+}
+
 window.exportedFunctions = {
-    "requestHelp": requestHelp
+    "requestHelp": requestHelp,
+    "setup": setup
 };

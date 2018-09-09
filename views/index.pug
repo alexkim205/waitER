@@ -1,8 +1,19 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  textarea(rows=4, cols=50, id="infobox", autocomplete="off", readonly)
-  br
-  button(onClick="exportedFunctions.requestHelp()") Request Help
+    script(src='/socket.io/socket.io.js')
+    script(src='/javascripts/script_bundle.js')
+    script.
+      exportedFunctions.setup(#{id})
+    #loadingcontent()
+      h1= title
+      p Loading...
+    #innercontent(style='display: none;')
+      h1= title
+      p Welcome to #{title}
+      textarea(rows=4, cols=50, id="infobox", autocomplete="off", readonly)
+      br
+      button(onClick="exportedFunctions.requestHelp()") Request Help
+    #errorcontent(style='display: none;')
+      h1= title
+      p Invalid ID, access denied!
