@@ -1,4 +1,5 @@
 var network;
+var dashboard;
 
 function setup(id){
     var getdata = require('./getdata')
@@ -24,7 +25,7 @@ function setupTriage(){
 }
 
 function setupDashboard(){
-    require('./dashboard');
+    dashboard = require('./dashboard');
 }
 
 function requestHelp(){
@@ -33,9 +34,23 @@ function requestHelp(){
     }
 }
 
+function removeFromDashboard(id){
+    if(dashboard){
+        dashboard.remove(id);
+    }
+}
+
+function setMenuId(id){
+    if(dashboard){
+        dashboard.setMenuId(id);
+    }
+}
+
 window.exportedFunctions = {
     "requestHelp": requestHelp,
     "setup": setup,
     "setupTriage": setupTriage,
-    "setupDashboard": setupDashboard
+    "setupDashboard": setupDashboard,
+    "removeFromDashboard": removeFromDashboard,
+    "setMenuId": setMenuId
 };
