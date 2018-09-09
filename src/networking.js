@@ -51,6 +51,11 @@ function setup(io){
             pushUpdate();
             sock.emit("generated-id", id);
         });
+
+        sock.on("remove-patient", (id) => {
+            scheduling.remove(id);
+            pushUpdate();
+        });
     });
 }
 
