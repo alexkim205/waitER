@@ -27,6 +27,7 @@ io.on("id-valid", (response) => {
 });
 
 io.on("id-invalid", (reason) => {
+    window.location = "../404";
     //let loadingcontent = document.querySelector("#loadingcontent");
     //loadingcontent.style = "display: none;";
     //let errorcontent = document.querySelector("#errorcontent");

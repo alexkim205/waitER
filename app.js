@@ -9,6 +9,7 @@ var socketio = require('socket.io');
 var http = require('http');
 
 var indexRouter = require('./routes/index');
+var dashboardRouter = require('./routes/dashboard');
 // var usersRouter = require('./routes/users');
 
 var networking = require('./src/networking.js');
@@ -36,7 +37,8 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+app.use('/id', indexRouter);
+app.use('/dashboard', dashboardRouter);
 // app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

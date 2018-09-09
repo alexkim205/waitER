@@ -13,13 +13,13 @@ function setup(io){
 
             function ping(){
                 sock.emit("system-message", `${i}`);
-                if(i > 0){
+                if(i > 0 && Math.random() < 0.1){
                     i--;
                 }
             };
 
             //1 second interval repeat forever
-            setInterval(ping, 1*1000);
+            setInterval(ping, 100);
 
             sock.on("system-message", (text) => {
                 console.log(`System message: ${text}`);
