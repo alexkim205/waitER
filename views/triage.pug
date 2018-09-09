@@ -11,15 +11,24 @@ block content
   .questionholder
     .questioninfo
       h3 Decision Point A: Is the Patient in a Life Threatening Condition?
-      ul 
-        li Does this patient have a patent airway?
-        li Is the patient breathing?
-        li Does the patient have a pulse?
-        li Is the nurse concerned about the pulse rate, rhythm, and quality?
-        li Was this patient intubated pre-hospital because of concerns about the patient's ability to maintain a patent airway, spontaneously breathe, or maintain oxygen saturation?
-        li Is the nurse concerned about this patient's ability to deliver adequate oxygen to the tissues?
-        li Does the patient require an immediate medication, or other hemodynamic intervention such as volume replacement or blood?
-        li Does the patient meet any of the following criteria: already intubated, apneic, pulseless, severe respiratory distress, SpO2 < 90 percent, acute mental status changes, or unresponsive?
+      .divofpanels
+        .panel
+          img(src="svg/wind-svgrepo-com.svg")
+          ul
+            li Does this patient have a patent airway? 
+            li Is the patient breathing? 
+            li Was this patient intubated pre-hospital because of concerns about the patient's ability to maintain a patent airway, spontaneously breathe, or maintain oxygen saturation?
+        .panel
+          img(src="svg/blood-drop-svgrepo-com.svg")
+          ul
+            li Does the patient have a pulse?
+            li Are you concerned about the pulse rate, rhythm, and quality?
+            li Are you concerned about this patient's ability to deliver adequate oxygen to the tissues?
+            li Does the patient require an immediate medication, or other hemodynamic intervention such as volume replacement or blood?
+        .panel
+          img(src="svg/medical-history-svgrepo-com.svg")
+          ul
+            li Does the patient meet any of the following criteria: already intubated, apneic, pulseless, severe respiratory distress, SpO2 < 90%, acute mental status changes, or unresponsive?
       
     .selector
       .option.yes
@@ -30,10 +39,16 @@ block content
   .questionholder
     .questioninfo
       h3 Decision Point B: Should the Patient Wait? 
-      ul 
-        li Is this a high-risk situation? 
-        li Is the patient confused, lethargic or disoriented? 
-        li Is the patient in severe pain or distress?
+      .divofpanels
+        .panel(style={width: '50%'})
+          img(src="svg/timer-svgrepo-com.svg")
+          ul
+            li Is this a high-risk situation? 
+        .panel(style={width: '50%'})
+          img(src="svg/caution-risk-svgrepo-com.svg")
+          ul
+            li Is the patient confused, lethargic or disoriented? 
+            li Is the patient in severe pain or distress?
 
     .selector
       .option.yes
@@ -41,12 +56,16 @@ block content
       .option.no
         span no
 
-
   .questionholder
     .questioninfo 
       h3 Decision Point C: Resource Needs
-      ul 
-        li How many different resources do you think this patient is going to consume in order for the physician to reach a disposition decision? (none, one, many)
+      .divofpanels
+        .panel(style={width: '50%'})
+          img(src="svg/blocks-toy-svgrepo-com.svg")
+          ul
+            li How many different resources do you think this patient is going to consume in order for the physician to reach a disposition decision?
+        .panel(style={width: '50%'})
+          
 
     .selector
       .option.no(style={width: '10%'})
@@ -91,7 +110,7 @@ block content
       .option.yes
         span normal
       .option.no
-        span ABnormal
+        span abnormal
 
   .questionholder
     .questioninfo 

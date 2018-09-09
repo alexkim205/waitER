@@ -6,15 +6,31 @@
   border-radius: 5px 5px 5px 5px;
   -moz-border-radius: 5px 5px 5px 5px;
   -webkit-border-radius: 5px 5px 5px 5px;
-  border: 2px solid #7f8c8d; }
+  border: 2px solid #7f8c8d;
+  max-width: 1100px; }
   .questionholder .questioninfo {
     padding: 1.5em; }
     .questionholder .questioninfo h3 {
       margin-bottom: 0.5em; }
-    .questionholder .questioninfo ul {
-      list-style: none;
-      padding-left: 2.5em;
-      font-size: 0.9em; }
+    .questionholder .questioninfo .divofpanels {
+      display: flex; }
+      .questionholder .questioninfo .divofpanels .panel {
+        width: 33.33%; }
+        .questionholder .questioninfo .divofpanels .panel img {
+          padding: 2em;
+          width: 200px;
+          transition: all .2s ease-in-out;
+          display: block;
+          margin: auto; }
+          .questionholder .questioninfo .divofpanels .panel img:hover {
+            transform: scale(1.15); }
+        .questionholder .questioninfo .divofpanels .panel ul {
+          padding-left: 2.5em;
+          font-size: 0.9em;
+          text-align: left;
+          max-width: 300px;
+          display: block;
+          margin: auto; }
     .questionholder .questioninfo table {
       margin: 0 auto; }
 
@@ -46,7 +62,8 @@ p {
       color: #3498db;
       font-size: 1.8em; }
 
-#decisionDtable td, #decisionDtable th {
+#decisionDtable td,
+#decisionDtable th {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: center; }
