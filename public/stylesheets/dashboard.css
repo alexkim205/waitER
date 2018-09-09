@@ -1,0 +1,45 @@
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #ecf0f1;
+  top: 50%;
+}
+
+.scroll {
+  color: white;
+  background-color: black;
+  padding: 15px;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.scroll a:hover {
+    background-color: #777;
+}
+
+.scroll a{
+    padding: 8px;
+    color: white;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
+  }
+
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+#myDIV {
+  width: 100%;
+  padding: 50px 0;
+  height: 250px;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+}
