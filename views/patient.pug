@@ -23,22 +23,27 @@ block content
       p Keep scrolling to find out more about approximate wait times for your condition. Thank you for being patient with us.
 
     .maincontainer
-      .single-chart
-        p Your approximate queue position:
-        svg.circular-chart(viewBox='0 0 36 36')
-          path.circle-bg(d='M18 2.0845\
-          a 15.9155 15.9155 0 0 1 0 31.831\
-          a 15.9155 15.9155 0 0 1 0 -31.831')
-          path.circle.gray(id='progresscirclered', stroke-dasharray='80, 100', d='M18 2.4845\
-          a 15.9155 15.9155 0 0 1 0 31.831\
-          a 15.9155 15.9155 0 0 1 0 -31.831')
-          path.circle.red(id='progresscirclegray', stroke-dasharray='80, 100', d='M18 2.0845\
-          a 15.9155 15.9155 0 0 1 0 31.831\
-          a 15.9155 15.9155 0 0 1 0 -31.831')
-          text.percentage(id='queuepos', x='18', y='20.35')
-      .yourein
-        img(src="../svg/checked-check-svgrepo-com.svg")
-        p Thank you for waiting. A nurse will be with you shortly.
-      .infocontainer
-        p Call a volunteer
-        p Request a nurse
+      .status
+        h3 Status: 
+        p We are finding you a spot in the ER.
+      .tworow
+        .single-chart
+          p Your approximate queue position:
+          svg.circular-chart(viewBox='0 0 36 36')
+            path.circle-bg(d='M18 2.0845\
+            a 15.9155 15.9155 0 0 1 0 31.831\
+            a 15.9155 15.9155 0 0 1 0 -31.831')
+            path.circle.gray(id='progresscirclered', stroke-dasharray='80, 100', d='M18 2.4845\
+            a 15.9155 15.9155 0 0 1 0 31.831\
+            a 15.9155 15.9155 0 0 1 0 -31.831')
+            path.circle.red(id='progresscirclegray', stroke-dasharray='80, 100', d='M18 2.0845\
+            a 15.9155 15.9155 0 0 1 0 31.831\
+            a 15.9155 15.9155 0 0 1 0 -31.831')
+            text.percentage(id='queuepos', x='18', y='20.35')
+        .yourein
+          img(src="../svg/checked-check-svgrepo-com.svg")
+        .infocontainer
+          .requestbutton
+            p Call a volunteer
+          .requestbutton
+            p Request a nurse

@@ -23,26 +23,40 @@ body {
       margin: 0.5em 0; }
 
 .maincontainer {
-  display: flex;
   padding: 1.5em;
+  text-align: center;
   margin: 2em auto; }
-  .maincontainer .yourein {
-    display: none;
-    width: 50%;
-    margin: 0 auto;
-    text-align: center; }
-    .maincontainer .yourein img {
-      max-width: 250px; }
-    .maincontainer .yourein p {
-      font-size: 1.2em;
-      padding: 1em; }
-  .maincontainer .infocontainer {
-    margin: 2em auto;
-    width: 50%; }
-    .maincontainer .infocontainer p {
-      font-size: 1.5em;
-      padding: 1em;
-      line-height: 1.6em; }
+  .maincontainer .tworow {
+    display: flex;
+    margin: 3em 0; }
+    .maincontainer .tworow .yourein {
+      display: none;
+      width: 50%;
+      margin: 0 auto;
+      text-align: center; }
+      .maincontainer .tworow .yourein img {
+        max-width: 250px; }
+      .maincontainer .tworow .yourein p {
+        font-size: 1.2em;
+        padding: 1em; }
+    .maincontainer .tworow .infocontainer {
+      margin: 2em auto;
+      width: 50%; }
+      .maincontainer .tworow .infocontainer .requestbutton {
+        width: 300px;
+        margin: 0 auto;
+        background-color: #3498db;
+        color: white;
+        border-radius: 5px 5px 5px 5px;
+        -moz-border-radius: 5px 5px 5px 5px;
+        -webkit-border-radius: 5px 5px 5px 5px;
+        cursor: pointer; }
+      .maincontainer .tworow .infocontainer p {
+        font-size: 1.5em;
+        padding: 1em;
+        line-height: 1.6em; }
+  .maincontainer .status {
+    width: 100%; }
 
 .flex-wrapper {
   display: flex;
@@ -51,7 +65,6 @@ body {
 .single-chart {
   justify-content: space-around;
   width: 50%;
-  justify-content: space-around;
   margin: 0 auto;
   text-align: center; }
   .single-chart p {
@@ -116,59 +129,3 @@ ul.topnav {
     float: none; }
     ul.topnav li.right {
       float: none; } }
-
-.questionholder {
-  margin: 2em auto;
-  width: 95%;
-  background-color: white;
-  color: #34495e;
-  border-radius: 5px 5px 5px 5px;
-  -moz-border-radius: 5px 5px 5px 5px;
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border: 2px solid #7f8c8d;
-  max-width: 1100px; }
-  .questionholder .questioninfo {
-    padding: 1.5em; }
-    .questionholder .questioninfo h3 {
-      margin-bottom: 0.5em; }
-    .questionholder .questioninfo .divofpanels {
-      display: flex; }
-      .questionholder .questioninfo .divofpanels .panel {
-        width: 33.33%; }
-        .questionholder .questioninfo .divofpanels .panel.resources {
-          text-align: center; }
-        .questionholder .questioninfo .divofpanels .panel img {
-          padding: 2em;
-          width: 200px;
-          transition: all .2s ease-in-out;
-          display: block;
-          margin: auto; }
-          .questionholder .questioninfo .divofpanels .panel img:hover {
-            transform: scale(1.15); }
-        .questionholder .questioninfo .divofpanels .panel ul {
-          padding-left: 2.5em;
-          font-size: 0.9em;
-          text-align: left;
-          max-width: 300px;
-          display: block;
-          margin: auto; }
-    .questionholder .questioninfo table {
-      margin: 0 auto; }
-  .questionholder .questioninfo.submit {
-    text-align: center; }
-    .questionholder .questioninfo.submit #submitbutton {
-      padding: 1em;
-      cursor: pointer;
-      -webkit-transition: all 0.2s ease;
-      -moz-transition: all 0.2s ease;
-      -ms-transition: all 0.2s ease;
-      -o-transition: all 0.2s ease;
-      transition: all 0.2s ease;
-      border-radius: 5px 5px 5px 5px;
-      -moz-border-radius: 5px 5px 5px 5px;
-      -webkit-border-radius: 5px 5px 5px 5px; }
-      .questionholder .questioninfo.submit #submitbutton:hover {
-        background-color: #57bcff;
-        color: white; }
-        .questionholder .questioninfo.submit #submitbutton:hover span {
-          transform: scale(1.15); }

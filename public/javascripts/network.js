@@ -16,6 +16,7 @@ function updateQueue(text) {
     $(".yourein").css({
       'display': 'block'
     })
+    $(".status>p").text("Thank you for waiting. A nurse will be with you shortly.")
   }
 
   // let infobox = document.getElementById("infobox");
