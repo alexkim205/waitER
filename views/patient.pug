@@ -1,14 +1,44 @@
 extends layout
 
 block header
-  link(rel='stylesheet', href='/stylesheets/triage.css')
+  link(rel='stylesheet', href='/stylesheets/patient.css')
   script.
     exportedFunctions.setup(#{id})
 
-block content
-  h1= title
-  h2 Get your wait time here
-  p Below is your approximate queue position. Your time is most important to us. 
-  | Keep scrolling to find out more about approximate wait times for your condition. 
+block navbar
+  ul.topnav
+    li
+      a.active(href='/id/' + id) WaitER
+    li
+      a(href='#news') Information
+    li
+      a(href='#news') Education 
 
-  h1.mb-4(id="infobox") TBD
+block content
+  .bodycontainer
+
+    .frontimage
+      h1 wait#[span ER]
+      h2 Your time in the ER is important to us. 
+      p Keep scrolling to find out more about approximate wait times for your condition. Thank you for being patient with us.
+
+    .maincontainer
+      .single-chart
+        p Your approximate queue position:
+        svg.circular-chart(viewBox='0 0 36 36')
+          path.circle-bg(d='M18 2.0845\
+          a 15.9155 15.9155 0 0 1 0 31.831\
+          a 15.9155 15.9155 0 0 1 0 -31.831')
+          path.circle.gray(id='progresscirclered', stroke-dasharray='80, 100', d='M18 2.4845\
+          a 15.9155 15.9155 0 0 1 0 31.831\
+          a 15.9155 15.9155 0 0 1 0 -31.831')
+          path.circle.red(id='progresscirclegray', stroke-dasharray='80, 100', d='M18 2.0845\
+          a 15.9155 15.9155 0 0 1 0 31.831\
+          a 15.9155 15.9155 0 0 1 0 -31.831')
+          text.percentage(id='queuepos', x='18', y='20.35')
+      .yourein
+        img(src="../svg/checked-check-svgrepo-com.svg")
+        p Thank you for waiting. A nurse will be with you shortly.
+      .infocontainer
+        p Call a volunteer
+        p Request a nurse

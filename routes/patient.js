@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/:clientId', function(req, res, next) {
-  res.render('patient', { title: 'WaitER', id: req.params['clientId'] });
+  res.render('patient', { title: 'waitER', id: req.params['clientId'] });
 });
 
 module.exports = router;
